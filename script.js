@@ -1,6 +1,6 @@
 var savePercent = 20; // Hardcoded save percentage
-var spendPercent = 10; // Hardcoded spend percentage
-var investPercent = 70; // Hardcoded invest percentage
+var spendPercent = 60; // Hardcoded spend percentage
+var investPercent = 20; // Hardcoded invest percentage
 
 function calculate() {
   var totalAmount = parseFloat(document.getElementById('total-amount').value);
@@ -15,22 +15,44 @@ function calculate() {
 
   // Create the pie chart
   var ctx = document.getElementById('chart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Invest', 'Save', 'Spend'],
-      datasets: [{
-        label: 'Amount',
-        data: [investAmount, saveAmount, spendAmount],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      }]
-    },
-    options: {
-      legend: {
-        position: 'right'
+  if (window.myChart) {
+    // Update existing chart data
+    window.myChart.data.datasets[0].data = [saveAmount, spendAmount, investAmount];
+    window.myChart.update();
+  } else {
+    // Create new chart
+    window.myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Save', 'Spend', 'Invest'],
+        datasets: [{
+          label: 'Amount',
+          data: [saveAmount, spendAmount, investAmount],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        }]
+      },
+      options: {
+        legend: {
+          position: 'right'
+        }
       }
-    }
-  });
+    });
+  }
 
-  document.getElementById('results').style.display = 'block';
+  // Toggle visibility of sections
+  document.getElementById('input-form').style.display = 'none';
+  document.getElementById('results').style.display = 'flex';
+}
+
+function goBack() {
+  // Toggle visibility of sections
+  document.getElementById('input-form').style.display = 'flex';
+  document.getElementById('results').style.display = 'none';
+
+  // Clear chart
+  var chartContainer = document.getElementById('chart');
+  chartContainer.innerHTML = '';
+
+  // Clear input field
+  document.getElementById('total-amount').value = '';
 }
