@@ -38,6 +38,9 @@ function calculate() {
     });
   }
 
+// I'm going to make this donut chart a thing that will take inputs for different investments, Roth IRA,
+//Traditional IRA, or just basic
+
 // Create the donut chart
 var donutCtx = document.getElementById('donut-chart').getContext('2d');
 if (window.myDonutChart) {
