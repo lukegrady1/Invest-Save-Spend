@@ -38,6 +38,33 @@ function calculate() {
     });
   }
 
+// Create the donut chart
+var donutCtx = document.getElementById('donut-chart').getContext('2d');
+if (window.myDonutChart) {
+  // Update existing donut chart data
+  window.myDonutChart.data.datasets[0].data = [investAmount, saveAmount, spendAmount];
+  window.myDonutChart.update();
+} else {
+  // Create new donut chart
+  window.myDonutChart = new Chart(donutCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Invest', 'Save', 'Spend'],
+      datasets: [{
+        label: 'Amount',
+        data: [investAmount, saveAmount, spendAmount],
+        backgroundColor: ['	#C1F1FF', '#1ca9c9', '#394d65'], // Customize the colors here
+      }]
+    },
+    options: {
+      cutoutPercentage: 60,
+      legend: {
+        position: 'right'
+      }
+    }
+  });
+}
+
   // Toggle visibility of sections
   document.getElementById('input-form').style.display = 'none';
   document.getElementById('results').style.display = 'flex';
@@ -48,11 +75,17 @@ function goBack() {
   document.getElementById('input-form').style.display = 'flex';
   document.getElementById('results').style.display = 'none';
 
-  // Clear chart
-  var chartContainer = document.getElementById('chart');
-  chartContainer.innerHTML = '';
+  // Clear charts
+  if (window.myChart) {
+    window.myChart.destroy();
+    window.myChart = null;
+  }
+  if (window.myDonutChart) {
+    window.myDonutChart.destroy();
+    window.myDonutChart = null;
+  }
 
-  // Clear input field
+  // Clear input fields
   document.getElementById('total-amount-input').value = '';
   document.getElementById('invest-input').value = '';
   document.getElementById('saving-input').value = '';
