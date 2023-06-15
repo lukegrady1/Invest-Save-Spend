@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
   <title>Invest, Save, Spend</title>
@@ -8,8 +7,26 @@
 <body>
   <div id="input-form" class="container">
     <h1>Invest, Save, Spend</h1>
-    <label for="total-amount">Total Income:</label>
-    <input type="number" id="total-amount" placeholder="Enter your income">
+    <div class="input-row">
+      <label for="total-amount-input">Total Income:</label>
+      <input type="number" id="total-amount-input" placeholder="Enter your income">
+    </div>
+
+    <div class="input-row">
+      <label for="invest-input">Invest Percentage:</label>
+      <input type="number" id="invest-input" placeholder="Enter percentage">
+    </div>
+
+    <div class="input-row">
+      <label for="saving-input">Saving Percentage:</label>
+      <input type="number" id="saving-input" placeholder="Enter percentage">
+    </div>
+
+    <div class="input-row">
+      <label for="spending-input">Spending Percentage:</label>
+      <input type="number" id="spending-input" placeholder="Enter percentage">
+    </div>
+
     <button onclick="calculate()">Calculate</button>
   </div>
 
