@@ -1,6 +1,6 @@
 var savePercent = 20; // Hardcoded save percentage
-var spendPercent = 60; // Hardcoded spend percentage
-var investPercent = 20; // Hardcoded invest percentage
+var spendPercent = 10; // Hardcoded spend percentage
+var investPercent = 70; // Hardcoded invest percentage
 
 function calculate() {
   var totalAmount = parseFloat(document.getElementById('total-amount').value);
