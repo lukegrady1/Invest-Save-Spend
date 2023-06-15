@@ -1,64 +1,63 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .chart-container {
-    margin-top: 10%;
-    width: 300px; /* Adjust the width as needed */
-    height: 300px; /* Adjust the height as needed */
-  }
-  
-  .chart-container canvas {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
-  .results-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .total-amount label {
-    flex: 1;
-  }
-  
-  input[type="number"] {
-    width: 125px;
-    margin-bottom: 20px;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 
-  .input-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    font-size: 14px;
-    width: fit-content;
-    background-color: green;
-    color: white;
-  }
-  
-  #results {
-    display: none;
-  }
-  
-  #results p {
-    margin: 5px 0;
-  }
-  
+.input-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-row label {
+  flex: 0 0 150px;
+  margin-right: 10px;
+}
+
+input[type="number"] {
+  width: 125px;
+  height: 24px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: green;
+  color: white;
+  align-self: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  width: 300px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-self: center;
+}
+
+#results {
+  display: none;
+}
+
+#results p {
+  margin: 2px 0;
+}
