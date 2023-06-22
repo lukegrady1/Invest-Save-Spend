@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invest, Save, Spend</title>
+  <link rel="stylesheet" type="text/css" href="/Calculate/styles.css">
+</head>
+<body>
+  <div id="input-form" class="container">
+    <h1>Invest, Save, Spend</h1>
+    <div class="input-row">
+      <label for="total-amount-input">Total Income:</label>
+      <input type="number" id="total-amount-input" placeholder="Enter your income">
+    </div>
+
+    <div class="input-row">
+      <label for="invest-input">Invest Percentage:</label>
+      <input type="number" id="invest-input" placeholder="Enter percentage">
+    </div>
+
+    <div class="input-row">
+      <label for="saving-input">Saving Percentage:</label>
+      <input type="number" id="saving-input" placeholder="Enter percentage">
+    </div>
+
+    <div class="input-row">
+      <label for="spending-input">Spending Percentage:</label>
+      <input type="number" id="spending-input" placeholder="Enter percentage">
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+  </div>
+
+  <div id="results" class="container">
+    <div class="chart-container">
+      <canvas id="chart"></canvas>
+      <canvas id="donut-chart"></canvas>
+    </div>
+    <div class="results-container">
+      <h2>Results:</h2>
+      <p id="invest-amount">Invest: $0</p>
+      <p id="save-amount">Save: $0</p>
+      <p id="spend-amount">Spend: $0</p>
+      <button onclick="goBack()">Back</button>
+    </div>
+    <div id="results" class="container">
+      <div class="investment-input">
+        <label>Select Investments:</label>
+        <div>
+          <input type="checkbox" id="stock" value="Stocks">
+          <label for="stock">Stocks</label>
+        </div>
+        <div>
+          <input type="checkbox" id="bonds" value="Bonds">
+          <label for="bonds">Bonds</label>
+        </div>
+        <div>
+          <input type="checkbox" id="real-estate" value="Real Estate">
+          <label for="real-estate">Real Estate</label>
+        </div>
+        <div>
+          <input type="checkbox" id="crypto" value="Cryptocurrency">
+          <label for="crypto">Cryptocurrency</label>
+        </div>
+      </div>
+    
+      <div class="investment-input">
+        <label for="investment-amount">Investment Amount:</label>
+        <input type="number" id="investment-amount" placeholder="Enter amount">
+      </div>
+    
+      <button onclick="generateInvestmentChart()">Generate Chart</button>
+    </div>
+  </div>
+
+  <script src="/Calculate/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
