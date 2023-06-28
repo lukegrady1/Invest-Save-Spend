@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/lukegrady9) - lukegrady9@outlook.com
+Luke Grady - [@lukegrady9](https://twitter.com/lukegrady9) - lukegrady9@outlook.com
 
 Project Link: [https://github.com/lukegrady1/Invest-Save-Spend](https://github.com/lukegrady1/Invest-Save-Spend)
 
