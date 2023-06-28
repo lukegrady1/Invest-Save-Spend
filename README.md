@@ -39,7 +39,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/lukegrady1/Invest-Save-Spend"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/lukegrady1/Invest-Save-Spend/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/lukegrady1/Invest-Save-Spend">View Demo</a>
